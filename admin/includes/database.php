@@ -22,6 +22,16 @@ class Database {
   //   echo "true";
   // }
   }
+
+  public function query($sql) {
+    $result = mysqli_query($this->connection, $sql);
+      if(!$result){
+        die("query failed");
+      }
+
+      return $result;
+  }
+
 ///////////////******END OF CLASS ******** ///////
 }
 
