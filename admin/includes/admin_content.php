@@ -7,10 +7,13 @@
                 Admin
                 <small>Subheading</small>
             </h1>
-            <?php
-              if($database->connection) {
-                echo "True";
-              }
+
+            <?php // query call test
+            $sql = "SELECT * FROM users WHERE id=0";
+            $result = $database->query($sql);
+            $user_found = mysqli_fetch_array($result); //function pulls out results
+
+            echo $user_found['username'];
             ?>
 
             <ol class="breadcrumb">
