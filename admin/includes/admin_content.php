@@ -9,11 +9,13 @@
             </h1>
 
             <?php // query call test
-            $sql = "SELECT * FROM users WHERE id=0";
-            $result = $database->query($sql);
-            $user_found = mysqli_fetch_array($result); //function pulls out results
+            include("user.php");
 
-            echo $user_found['username'];
+            $result_set = User::find_by_id(1);
+
+            while($row = mysqli_fetch_array($result_set)){
+                echo $row['username']. " " . $row['first_name'] . " " . $row['last_name'] . "<br />";
+            }
             ?>
 
             <ol class="breadcrumb">

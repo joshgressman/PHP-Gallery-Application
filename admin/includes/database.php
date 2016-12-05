@@ -45,6 +45,7 @@ class Database {
 ///////////////******END OF CLASS ******** ///////
 }
 
+//Makes the class global used in Users
 $database = new Database(); // now reffers to Database Class
 
 
