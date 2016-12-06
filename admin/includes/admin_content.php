@@ -11,10 +11,11 @@
             <?php // query call test
             include("user.php");
 
-            $found_user = User::find_by_id(1);
+            $users = User::find_all_users();
 
-            $user = User::instantiation($found_user);
-              echo $user->username;
+            foreach ($users as $user) {
+              echo $user->username . "<br />";
+            }
 
             ?>
 
