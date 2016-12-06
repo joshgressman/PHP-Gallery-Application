@@ -12,7 +12,9 @@
             include("user.php");
 
             $found_user = User::find_by_id(1);
-              echo $found_user['username'];
+
+            $user = User::instantiation($found_user);
+              echo $user->username;
 
             ?>
 
