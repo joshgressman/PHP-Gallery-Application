@@ -11,11 +11,9 @@
             <?php // query call test
             include("user.php");
 
-            $result_set = User::find_by_id(1);
+            $found_user = User::find_by_id(1);
+              echo $found_user['username'];
 
-            while($row = mysqli_fetch_array($result_set)){
-                echo $row['username']. " " . $row['first_name'] . " " . $row['last_name'] . "<br />";
-            }
             ?>
 
             <ol class="breadcrumb">
